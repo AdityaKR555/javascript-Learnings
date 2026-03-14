@@ -73,3 +73,32 @@ const min = 10
 const max = 20
 
 console.log(Math.floor(Math.random() * (max - min + 1)) + min)
+
+// symbol datatype:-
+
+let s1 = Symbol("id");
+let s2 = Symbol("id");
+
+console.log(s1 == s2)
+
+let y = Symbol("x");
+console.log(y)
+
+let user = {
+    name : "Aditya",
+    [y] : "x",
+    z : 33
+};
+
+console.log(user[y])
+console.log(user.name)
+
+for (let key in user){
+    console.log(key);
+}
+
+// Shared symbols
+let ss1 = Symbol.for("app")
+let ss2 = Symbol.for("app")
+
+console.log(ss1 == ss2)
