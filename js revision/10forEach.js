@@ -46,4 +46,4 @@ const values = coding.forEach( (item) => {
     return item         
 } )
 
-console.log(values);        //undefined, cuz forEach don't return values but performs action only
+console.log(values);        //undefined, cuz forEach don't return values but performs actions only
