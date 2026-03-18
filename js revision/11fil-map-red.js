@@ -1,6 +1,6 @@
 // filter
 
-const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // const newNums = myNums.filter( (num) => {
 //     return num > 4
@@ -93,4 +93,14 @@ const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
 
 console.log(priceToPay);
 
+
+// question: // double → keep >5 → sum
+
+const nums = [1,2,3,4,5,6]
+
+result = nums.map( (num) => num*2 )
+               .filter( (num) => num>5 )
+               .reduce( (acc, num) => acc+num, 0 );
+
+console.log(result);
 

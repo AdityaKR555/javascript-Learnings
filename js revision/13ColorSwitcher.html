@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Switcher</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #212122;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+        .box{
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid white;
+            border-radius: 20px;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            color: white;
+            margin: 20px;
+        }
+        .one{
+            background-color: red;
+        }
+        .two{
+            background-color: green;
+        }   
+        .three{
+            background-color: blue;
+        }
+        .four{
+            background-color: yellow;
+        }
+        .four h2{
+            color: #212122;
+        }
+    </style>
+</head>
+<body>
+    <h2>Colour Switcher</h2>
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <div class="box one"><h2>Red</h2></div>
+        <div class="box two"><h2>Green</h2></div>
+        <div class="box three"><h2>Blue</h2></div>
+        <div class="box four"><h2>Yellow</h2></div>
+    </div>
+    <h2>Click any of the boxes above to change the background colour of the page</h2>
+
+    <script>
+        const one = document.querySelector('.one')
+        const two = document.querySelector('.two')
+        const three = document.querySelector('.three')
+        const four = document.querySelector('.four')
+
+        const resetShadow = () => {
+            one.style.boxShadow = "none"
+            two.style.boxShadow = "none"
+            three.style.boxShadow = "none"
+            four.style.boxShadow = "none"
+        }
+
+        one.addEventListener('click', () => {
+            resetShadow();
+            document.body.style.backgroundColor = "red"
+            one.style.boxShadow = "0px 0px 20px 5px white"
+        })
+        two.addEventListener('click', () => {
+             resetShadow();
+             document.body.style.backgroundColor = "green"
+             two.style.boxShadow = "0px 0px 20px 5px white"
+            document.body.style.backgroundColor = "green"
+            two.style.boxShadow = "0px 0px 20px 5px white"
+        })
+        three.addEventListener('click', () => {
+            resetShadow();
+            document.body.style.backgroundColor = "blue"
+            three.style.boxShadow = "0px 0px 20px 5px white"
+        })
+        four.addEventListener('click', () => {
+            resetShadow();
+            document.body.style.backgroundColor = "yellow"
+            four.style.borderColor = "#212122"
+            four.style.boxShadow = "0px 0px 20px 5px white"
+        })
+    </script>
+</body>
+</html>
