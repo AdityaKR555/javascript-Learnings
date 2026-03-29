@@ -4,6 +4,7 @@ let factPara = document.getElementById("fact");
 let btn = document.getElementById("button");
 
 let getFacts = async () => {
+
   try {
     factPara.innerHTML = "Loading...";
     console.log("Getting data....");
@@ -16,6 +17,7 @@ let getFacts = async () => {
     factPara.innerHTML = "Could not fetch a fact. Try again!";
     console.error(error);
   }
+  
 };
 
 btn.addEventListener("click", getFacts);
