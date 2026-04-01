@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+
+        function customRender(container, element){
+            const newElement = document.createElement(element.type);
+            newElement.innerText = element.children;
+            for (const prop in element.props) {
+                if(prop === 'children') continue;
+                newElement.setAttribute(prop, element.props[prop]);
+            }
+            container.appendChild(newElement);
+        }
+
+        const element = {
+            type : "a",
+            children : "Click me",
+            props : {
+                href : "https://www.google.com",
+                target : "_blank"
+            }
+        }
+
+        const element2 = {
+            type : "div",
+            children : "Hello World"
+        }
+        const root = document.querySelector("#root");
+        customRender(root, element);
+        customRender(root, element2);
+    </script>
+</body>
+</html>
